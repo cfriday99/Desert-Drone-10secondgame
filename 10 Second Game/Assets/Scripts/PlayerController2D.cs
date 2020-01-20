@@ -38,6 +38,7 @@ public class PlayerController2D : MonoBehaviour
         count = 0;
         winText.text = "";
         loseText.gameObject.SetActive(false);
+        winText.gameObject.SetActive(false);
         SetCountText();
         musicSource.clip = musicClipBgm;
         musicSource.Play();
@@ -117,16 +118,16 @@ public class PlayerController2D : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Score: " + count.ToString();
-        if (count >= 4)
+        if (startingTime <= 0 && count >= 4)
         {
+            winText.gameObject.SetActive(true);
             winText.text = "You Win!";
-            musicSource.clip = musicClipWin;
-            musicSource.Play();
+            musicSource.Stop();
         }
         if (startingTime <= 0 && count < 4)
         {
             loseText.gameObject.SetActive(true);
-            winText.text = count.ToString() + " of 4 parts collected \n Game Over!";
+            loseText.text = count.ToString() + " of 4 parts collected \n Game Over!";
             Destroy(gameObject, .1f);
             //musicSource.PlayOneShot(musicClipLose, 0.7F);
         }

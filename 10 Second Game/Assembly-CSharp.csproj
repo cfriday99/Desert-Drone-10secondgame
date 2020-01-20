@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Countdown.cs" />
     <Compile Include="Assets\Scripts\Elevator.cs" />
     <Compile Include="Assets\Scripts\PlayerController2D.cs" />
     <Compile Include="Assets\Scripts\TextDestroyer.cs" />
